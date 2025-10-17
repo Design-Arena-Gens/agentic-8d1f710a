@@ -1,0 +1,98 @@
+:root {
+  --bg-base: #030014;
+  --bg-deep: #060021;
+  --bg-accent: #211f44;
+  --bg-highlight: rgba(114, 73, 255, 0.4);
+  --gradient-1: conic-gradient(from 160deg at 50% 50%, #7249ff, #00ffc6, #ff73fa, #7249ff);
+  --gradient-2: radial-gradient(circle at 20% 20%, rgba(58, 227, 255, 0.45), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 76, 210, 0.42), transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(113, 74, 255, 0.4), transparent 60%);
+  --glow-outer: 0 0 120px rgba(96, 53, 255, 0.65);
+  --glow-inner: 0 0 40px rgba(96, 53, 255, 0.55);
+  --elevated-1: rgba(255, 255, 255, 0.06);
+  --elevated-2: rgba(255, 255, 255, 0.12);
+  --text-primary: #f7f8ff;
+  --text-secondary: rgba(229, 233, 255, 0.7);
+  --text-muted: rgba(229, 233, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-space);
+  overflow: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.095'/%3E%3C/svg%3E");
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+@keyframes plasmaFlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+    filter: hue-rotate(40deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 960px) {
+  body {
+    overflow: auto;
+  }
+}

@@ -1,3 +1,15 @@
+# Exceptions for project assets we need to keep
+!package.json
+!package-lock.json
+!tsconfig.json
+!.eslintrc.json
+!next.config.mjs
+!next-env.d.ts
+!src
+!src/**
+!public
+!public/**
+
 # Comprehensive .gitignore template for AI-generated projects
 # Covers most common languages, frameworks, and tools
 
@@ -190,12 +202,16 @@ _site/
 
 # Hugo
 /public/
+!/public
+!/public/**
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
 
 # Hexo
 public/
+!/public
+!/public/**
 .deploy*/
 
 # VuePress
@@ -881,6 +897,10 @@ venv.bak/
 # Data files
 *.csv
 *.json
+!package.json
+!package-lock.json
+!.eslintrc.json
+!tsconfig.json
 *.xml
 *.parquet
 data/
